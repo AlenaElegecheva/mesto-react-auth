@@ -1,0 +1,9 @@
+form#avatar-edit {
+    width: 358px;
+  }
+
+  @media screen and (max-width: 550px) {
+    form#avatar-edit {
+      width: 238px;
+    }
+  }

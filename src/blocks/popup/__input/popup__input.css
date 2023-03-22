@@ -1,0 +1,15 @@
+.popup__input {
+  display: flex;
+  width: 100%;
+  padding: 10px 0 5px 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  outline: none;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  margin: 0;
+}

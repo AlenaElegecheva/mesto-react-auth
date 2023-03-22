@@ -1,0 +1,28 @@
+.profile__add-btn {
+  border: 2px solid rgba(255, 255, 255, 1);
+  width: 150px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  margin-left: auto;
+  padding: 0;
+  background-image: url(../../../images/add.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 850px) {
+  .profile__add-btn {
+    justify-self: center;
+    margin-left: 0;
+    margin-top: 36px;
+    width: 336px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile__add-btn {
+    width: 282px;
+    background-image: url(../../../images/add_min.svg);
+  }
+}
