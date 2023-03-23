@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Route, Routes, Navigate } from "react-router-dom";
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
@@ -128,39 +129,41 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="root">
-        <Header />
-        <Main
-          onEditProfile={handleEditProfileClick}
-          onAddPlace={handleAddPlaceClick}
-          onEditAvatar={handleEditAvatarClick}
-          onCardClick={handleCardClick}
-          onCardLike={handleCardLike}
-          onCardDelete={handleDeleteClick}
-          cards={cards}
-        />
-        <Footer />
+        <Routes>
+          <Header />
+          <Main
+            onEditProfile={handleEditProfileClick}
+            onAddPlace={handleAddPlaceClick}
+            onEditAvatar={handleEditAvatarClick}
+            onCardClick={handleCardClick}
+            onCardLike={handleCardLike}
+            onCardDelete={handleDeleteClick}
+            cards={cards}
+          />
+          <Footer />
 
-        {/* <!--Попап редактирования--> */}
-        <EditProfilePopup isOpen={editProfilePopupOpen} onClose={closePopups} onUpdateUser={handleUpdateUser} loadText={loadText} />
+          {/* <!--Попап редактирования--> */}
+          <EditProfilePopup isOpen={editProfilePopupOpen} onClose={closePopups} onUpdateUser={handleUpdateUser} loadText={loadText} />
 
-        {/* <!--Попап добавления карточки--> */}
-        <AddPlacePopup isOpen={addPlacePopupOpen} onClose={closePopups} onAddPlace={handleAddPlaceSubmit} loadText={loadText} />
+          {/* <!--Попап добавления карточки--> */}
+          <AddPlacePopup isOpen={addPlacePopupOpen} onClose={closePopups} onAddPlace={handleAddPlaceSubmit} loadText={loadText} />
 
-        {/* <!--Попап картинки--> */}
-        <ImagePopup card={selectedCard} isOpen={imagePopupOpen} onClose={closePopups} />
+          {/* <!--Попап картинки--> */}
+          <ImagePopup card={selectedCard} isOpen={imagePopupOpen} onClose={closePopups} />
 
-        {/* <!--Попап редактирования аватара--> */}
-        <EditAvatarPopup isOpen={editAvatarPopupOpen} onClose={closePopups} onUpdateAvatar={handleUpdateAvatar} loadText={loadText} />
+          {/* <!--Попап редактирования аватара--> */}
+          <EditAvatarPopup isOpen={editAvatarPopupOpen} onClose={closePopups} onUpdateAvatar={handleUpdateAvatar} loadText={loadText} />
 
-        {/* <!--Попап удаления карточки--> */}
-        <PopupWithForm
-          name={"delete-card"}
-          title={"Вы уверены?"}
-          formName={"card-delete"}
-          formId={"card-delete"}
-          btnText={"Да"}
-        >
-        </PopupWithForm>
+          {/* <!--Попап удаления карточки--> */}
+          <PopupWithForm
+            name={"delete-card"}
+            title={"Вы уверены?"}
+            formName={"card-delete"}
+            formId={"card-delete"}
+            btnText={"Да"}
+          >
+          </PopupWithForm>
+        </Routes>
       </div>
     </CurrentUserContext.Provider>
   );
