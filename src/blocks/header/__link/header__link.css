@@ -1,0 +1,23 @@
+.header__link {
+  background-color: rgba(0, 0, 0, 1);
+  color:white;
+  margin: 5px 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header__link:hover {
+  opacity: .8;
+  transition: .5s;
+}
+
+
+@media screen and (max-width: 550px) {
+  .header__link {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  
+}

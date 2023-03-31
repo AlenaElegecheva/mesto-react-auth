@@ -1,0 +1,9 @@
+.entry-container__form {
+  width: 358px;
+}
+
+@media screen and (max-width: 550px) {
+  .entry-container__form {
+    width: 260px;
+  }  
+}

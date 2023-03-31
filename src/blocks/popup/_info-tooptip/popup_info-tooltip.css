@@ -1,0 +1,15 @@
+.popup_info-tooltip {
+  min-height: 330px;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+  .popup_info-tooltip {
+    max-width: 280px;
+  }
+}
