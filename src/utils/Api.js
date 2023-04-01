@@ -1,7 +1,7 @@
 class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
-    this._headers = headers.authorization;
+    this._headers = headers;
 
   }
 
@@ -14,18 +14,14 @@ class Api {
   
   getInitialCards() {
     return fetch(this._baseUrl + '/cards', {
-      headers: {
-        authorization: this._headers,
-      }
+      headers: this._headers
     })
       .then(this._checkResponse)
   }
 
   getUsersData() {
     return fetch(this._baseUrl + '/users/me', {
-      headers: {
-        authorization: this._headers,
-      }
+      headers: this._headers
     })
       .then(this._checkResponse)
   }
@@ -34,10 +30,7 @@ class Api {
     return fetch(this._baseUrl + '/users/me', {
       method: 'PATCH',
       body: JSON.stringify(data),
-      headers: {
-        authorization: this._headers,
-        'Content-Type': 'application/json'
-      }
+      headers: this._headers
     })
       .then(this._checkResponse)
   }
@@ -45,9 +38,7 @@ class Api {
   deleteCards(_id) {
     return fetch(this._baseUrl + '/cards/' + _id, {
       method: 'DELETE',
-      headers: {
-        authorization: this._headers,
-      }
+      headers: this._headers
     })
       .then(this._checkResponse)
   }
@@ -56,10 +47,7 @@ class Api {
     return fetch(this._baseUrl + '/users/me/avatar', {
       method: 'PATCH',
       body: JSON.stringify(data),
-      headers: {
-        authorization: this._headers,
-        'Content-Type': 'application/json'
-      }
+      headers: this._headers
     })
       .then(this._checkResponse)
   }
@@ -67,9 +55,7 @@ class Api {
   changeLikeCardStatus(_id, isLiked) {
     return fetch(this._baseUrl + '/cards/' + _id + '/likes', {
       method: isLiked ? 'PUT' : 'DELETE',
-      headers: {
-        authorization: this._headers,
-      }
+      headers: this._headers
     })
       .then(this._checkResponse)
   }
@@ -78,10 +64,7 @@ class Api {
     return fetch(this._baseUrl + '/cards', {
       method: 'POST',
       body: JSON.stringify(data),
-      headers: {
-        authorization: this._headers,
-        'Content-Type': 'application/json'
-      }
+      headers: this._headers
     })
       .then(this._checkResponse)
   }
